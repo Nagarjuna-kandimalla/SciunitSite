@@ -1,65 +1,73 @@
 "use client";
 
-import { Card } from "@/components/ui/card";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { Card } from "@/components/ui/card";
+import { Box, Terminal } from "lucide-react";
 
 export default function TrackSelector() {
-  const router = useRouter();
-  const [active, setActive] = useState<"sciunit" | "flinc">("sciunit"); // default active = sciunit
+  const [active, setActive] = useState<"sciunit" | "flinc">("sciunit");
 
   return (
-    <div className="grid gap-6 md:grid-cols-2 max-w-4xl mx-auto mt-12 px-4">
-      {/* Sciunit Card */}
+    <section className="mt-6 w-full flex justify-center">
+      <div className="grid w-full max-w-5xl grid-cols-1 gap-4 px-4 sm:grid-cols-2">
+        {/* === Sciunit Tile === */}
         <Card
-            role="button"
-            tabIndex={0}
-            onClick={() => {
-               setActive("sciunit");
-               document.getElementById("sciunit")?.scrollIntoView({ behavior: "smooth" });
-             }}
-            onKeyDown={(e) => e.key === "Enter" && setActive("sciunit")}
-            className={`p-6 w-full transition cursor-pointer focus:outline-none focus:ring-4 focus:ring-mizzouGold
-            ${active === "sciunit"
-                 ? "border-4 border-mizzouGold shadow-lg"
-                 : "border border-gray-300 hover:shadow-md"}`}
->
-            <h3 className={`text-xl font-bold ${active === "sciunit" ? "text-mizzouGold" : "text-black"}`}>
-                Sciunit
-             </h3>
-            <p className="text-gray-600 mt-2">
-                 Learn reproducible research objects with hands-on examples.
-             </p>
-       </Card>
-
-
-      {/* FLINC Card */}
-      <Card
-        role="button"
-        tabIndex={0}
-        onClick={() => {
-          setActive("flinc");
-          router.push("/flinc");
-        }}
-        onKeyDown={(e) => e.key === "Enter" && setActive("flinc")}
-        className={`p-6 transition cursor-pointer focus:outline-none focus:ring-4
-          ${
-            active === "flinc"
-              ? "border-4 border-primary shadow-lg"
-              : "border border-border opacity-90 hover:shadow-lg"
-          }`}
-      >
-        <h3
-          className={`text-xl font-bold ${
-            active === "flinc" ? "text-primary" : "text-foreground"
+          role="button"
+          tabIndex={0}
+          onClick={() => setActive("sciunit")}
+          className={`flex items-center justify-between rounded-2xl border transition-all duration-300 p-5 sm:p-6 cursor-pointer ${
+            active === "sciunit"
+              ? "border-[#F1B82D] shadow-sm"
+              : "border-black/10 hover:border-black/30"
           }`}
         >
-          FLINC
-        </h3>
-        <p className="text-muted-foreground mt-2">
-          Notebook-first reproducibility (Coming soon).
-        </p>
-      </Card>
-    </div>
+          <div className="flex items-center gap-3">
+            <Box className="h-5 w-5 text-black/80" />
+            <div>
+              <h3
+                className={`text-lg font-semibold ${
+                  active === "sciunit" ? "text-[#F1B82D]" : "text-black"
+                }`}
+              >
+                Sciunit
+              </h3>
+              <p className="text-sm text-black/60">
+                CLI containers, provenance, repeat
+              </p>
+            </div>
+          </div>
+          {active === "sciunit"}
+        </Card>
+
+        {/* === FLINC Tile === */}
+        <Card
+          role="button"
+          tabIndex={0}
+          onClick={() => setActive("flinc")}
+          className={`flex items-center justify-between rounded-2xl border transition-all duration-300 p-5 sm:p-6 cursor-pointer ${
+            active === "flinc"
+              ? "border-[#F1B82D] shadow-sm"
+              : "border-black/10 hover:border-black/30"
+          }`}
+        >
+          <div className="flex items-center gap-3">
+            <Terminal className="h-5 w-5 text-black/80" />
+            <div>
+              <h3
+                className={`text-lg font-semibold ${
+                  active === "flinc" ? "text-[#F1B82D]" : "text-black"
+                }`}
+              >
+                FLINC
+              </h3>
+              <p className="text-sm text-black/60">
+                Jupyter Audit/Repeat kernels
+              </p>
+            </div>
+          </div>
+          {active === "flinc"}
+        </Card>
+      </div>
+    </section>
   );
 }
