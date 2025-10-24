@@ -1,48 +1,89 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowDown } from "lucide-react";
+import { Rocket, Play, CheckCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 
 export default function SciunitHero() {
   return (
-    <section
-      id="sciunit-hero"
-      className="relative flex flex-col items-center justify-center text-center py-24 px-6 bg-gradient-to-b from-white to-[#FFF8E1] overflow-hidden"
-    >
-      {/* glow */}
+    <section className="w-full max-w-6xl mx-auto mt-16 px-0 sm:px-2 lg:px-3">
+      {/* === Wrap the main content in motion.div for fade-in === */}
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1, y: [0, -10, 0] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-[#F1B82D]/25 blur-3xl"
-      />
-
-      {/* text */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 12 }}
         whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="relative z-10"
       >
-        <h1 className="text-5xl md:text-6xl font-extrabold text-mizzouBlack mb-3 leading-tight">
-          Reproducible Research
-        </h1>
-        <p className="text-xl md:text-2xl text-mizzouGold font-semibold">
-          Sciunit & FLINC — Executable Research Objects
-        </p>
-      </motion.div>
+        {/* === Top Row: Badge + Try Quickstart === */}
+        <div className="flex items-center justify-between mb-6">
+          <Badge
+            className="text-black font-medium text-sm ring-1"
+            style={{
+              backgroundColor: "#F1B82D",
+              borderColor: "rgba(0,0,0,0.1)",
+            }}
+          >
+            Sciunit CLI • Executable Research Objects
+          </Badge>
 
-      {/* scroll cue */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1, y: [0, 10, 0] }}
-        transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-10 cursor-pointer"
-        onClick={() =>
-          document.getElementById("intro")?.scrollIntoView({ behavior: "smooth" })
-        }
-      >
-        <ArrowDown className="w-6 h-6 text-mizzouGold" />
+          <Button
+            className="gap-2 px-4 py-2 text-sm font-medium bg-[#F1B82D] text-black hover:bg-[#f5c643] rounded-md shadow-none"
+          >
+            <Rocket className="h-4 w-4" />
+            Try Quickstart
+          </Button>
+        </div>
+
+        {/* === Hero Content === */}
+        <div className="grid items-start gap-10 md:grid-cols-[1.4fr_1.4fr]">
+          {/* === Left Text === */}
+          <div>
+            <h2 className="text-4xl sm:text-5xl font-extrabold leading-tight tracking-tight">
+              Make experiments{" "}
+              <span style={{ color: "#F1B82D" }}>runnable</span>,{" "}
+              <span style={{ color: "#F1B82D" }}>reusable</span>, and{" "}
+              <span style={{ color: "#F1B82D" }}>shareable</span>
+            </h2>
+
+            <p className="mt-4 max-w-xl text-black/70">
+              Sciunit CLI turns your research code, data, and environment into instantly 
+              recomputable containers using application virtualization. Unlike traditional 
+              research objects that only aggregate files, Sciunits enable exact, partial, and 
+              modified repeatability — all with minimal storage and setup.
+            </p>
+
+            {/* === Bullets === */}
+            <div className="mt-5 flex flex-wrap gap-4 text-sm text-black/70">
+              <span className="inline-flex items-center gap-1">
+                <CheckCircle className="h-3.5 w-3.5" /> Application virtualization for container creation
+              </span>
+              <span className="inline-flex items-center gap-1">
+                <CheckCircle className="h-3.5 w-3.5" /> Versioned storage via deduplication
+              </span>
+              <span className="inline-flex items-center gap-1">
+                <CheckCircle className="h-3.5 w-3.5" /> Provenance-guided reuse and visualization
+              </span>
+            </div>
+          </div>
+
+          {/* === Right Video === */}
+          <div className="flex flex-col items-end gap-3">
+            <div className="relative w-full rounded-2xl overflow-hidden ring-1 ring-black/10 bg-black/5">
+              <iframe
+                className="w-full h-[270px] sm:h-[300px] md:h-[340px] lg:h-[380px]"
+                src="https://www.youtube.com/embed/qwosU7e9mqc"
+                title="Sciunit Intro Video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+
+            <p className="text-xs text-black/60">
+              Watch the player for a quick understanding of Sciunit.
+            </p>
+          </div>
+        </div>
       </motion.div>
     </section>
   );

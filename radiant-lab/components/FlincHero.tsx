@@ -36,11 +36,10 @@ export default function FlincHero() {
           </h2>
 
           <p className="mt-4 max-w-xl text-black/70">
-            FLINC integrates Sciunit into Jupyter via two dedicated kernels. Use
-            the <strong>Audit</strong> kernel to capture your notebook’s exact
-            runtime (code, libraries, binaries), then switch to the{" "}
-            <strong>Repeat</strong> kernel to re-execute reliably—on the same
-            machine or another one.
+            FLINC extends Sciunit's reproducibility engine to interactive notebooks and REPL environments.
+            Through <strong>Audit</strong> and <strong>Repeat</strong> kernels, it captures and replays complete 
+            computational contexts — code, data, and binaries — ensuring <strong>re-executable</strong>, <strong>shareable</strong>, and  
+            <strong> provenance-rich</strong> workflows beyond a single platform
           </p>
         </div>
 

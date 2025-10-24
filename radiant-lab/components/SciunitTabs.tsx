@@ -87,7 +87,7 @@ const tabData = [
             </div>
             <p className="text-sm text-black/70">
               Stores versions using content-defined chunking so repeated or
-              shared blocks across runs don’t duplicate on disk.
+              shared blocks across runs don't duplicate on disk.
             </p>
           </div>
         </div>
@@ -96,7 +96,7 @@ const tabData = [
   },
   {
     id: "solve",
-    title: "How it Solves It",
+    title: "How it Solves",
     content: (
       <>
         <h3 className="text-lg font-semibold text-black/90 mb-1">

@@ -4,10 +4,11 @@ import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import TrackSelector from "@/components/TrackSelector";
-import SciunitIntro from "@/components/SciunitIntro";
 import SciunitTabs from "@/components/SciunitTabs";
 import FlincHero from "@/components/FlincHero";
-//import FlincTabs from "@/components/FlincTabs";
+import FlincTabs from "@/components/FlincTabs";
+import SciunitHero from "@/components/SciunitHero";
+import TryItNowButton from "@/components/TryItNow";
 
 export default function Home() {
   // 🔸 lifted up state
@@ -24,14 +25,15 @@ export default function Home() {
         {/* Conditional rendering for each track */}
         {activeTrack === "sciunit" ? (
           <>
-            <SciunitIntro />
+            <SciunitHero />
             <SciunitTabs />
+            <TryItNowButton label="Try Sciunit Now" />
           </>
         ) : (
           <>
             <FlincHero />
-            {/* <FlincTabs /> */}
-          </>
+            <FlincTabs />
+            <TryItNowButton label="Try FLINC Now" />          </>
         )}
       </main>
 
