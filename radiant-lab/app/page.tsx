@@ -27,7 +27,7 @@ export default function Home() {
           <>
             <SciunitHero />
             <SciunitTabs />
-            <TryItNowButton label="Try Sciunit Now" />
+            <TryItNowButton label="Try SciunitCLI Now" />
           </>
         ) : (
           <>

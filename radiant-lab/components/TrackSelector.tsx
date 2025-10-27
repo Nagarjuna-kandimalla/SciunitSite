@@ -59,7 +59,7 @@ export default function TrackSelector({ active, setActive }: TrackSelectorProps)
                   active === "sciunit" ? "text-[#F1B82D]" : "text-black"
                 }`}
               >
-                Command Line Interface
+                Command Line Interface(CLI)
               </h3>
               <p className="text-sm text-black/60 mt-0.5">
                 Containers, Provenance, Repeat
