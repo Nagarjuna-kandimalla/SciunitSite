@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 
-const repo = "Sciunit";
+const repo = "SciunitSite";
 
 const nextConfig: NextConfig = {
   output: "export",
