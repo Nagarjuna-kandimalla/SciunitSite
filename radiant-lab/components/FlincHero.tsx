@@ -48,11 +48,15 @@ export default function FlincHero() {
         <div className="flex flex-col items-end gap-4">
           {/* Quickstart Button */}
           
-          <Button asChild className="gap-2">
-            <Link href="https://trovi.chameleoncloud.org/dashboard/artifacts/24618f97-95cc-4bbd-b79a-26adbfdc8cb7">
+          <Button asChild className="gap-2 px-4 py-2 text-sm font-medium bg-[#F1B82D] text-black hover:bg-[#f5c643] rounded-md shadow-none">
+            <a
+              href="https://trovi.chameleoncloud.org/dashboard/artifacts/24618f97-95cc-4bbd-b79a-26adbfdc8cb7"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Rocket className="h-4 w-4" />
                <span>Quickstart</span>
-            </Link>
+            </a>
           </Button>
         
           {/* Video Placeholder */}
