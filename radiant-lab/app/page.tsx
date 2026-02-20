@@ -28,14 +28,14 @@ export default function Home() {
             <SciunitHero />
             <SciunitTabs />
             <TryItNowButton label="Try Sciunit CLI Now"
-            href="https://trovi.chameleoncloud.org/dashboard/artifacts/60bfeea7-d35d-42c1-ae3b-c8b94fae99a9" />
+            href="https://trovi.chameleoncloud.org/dashboard/artifacts/e039b284-c22a-4e42-b45a-eac2b443cdb3" />
           </>
         ) : (
           <>
             <FlincHero />
             <FlincTabs />
             <TryItNowButton label="Try NB Kernels Now"
-            href="https://trovi.chameleoncloud.org/dashboard/artifacts/24618f97-95cc-4bbd-b79a-26adbfdc8cb7" />
+            href="https://trovi.chameleoncloud.org/dashboard/artifacts/bc4b91f6-dd1b-47c3-ae32-56f10c7ffb3f" />
           </>
         )}
       </main>

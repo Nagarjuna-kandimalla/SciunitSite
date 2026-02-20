@@ -56,7 +56,7 @@ export default function FlincHero() {
             className="gap-2 px-4 py-2 text-sm font-medium bg-[#F1B82D] text-black hover:bg-[#f5c643] rounded-md shadow-none"
           >
             <a
-              href="https://trovi.chameleoncloud.org/dashboard/artifacts/24618f97-95cc-4bbd-b79a-26adbfdc8cb7"
+              href="https://trovi.chameleoncloud.org/dashboard/artifacts/bc4b91f6-dd1b-47c3-ae32-56f10c7ffb3f"
               target="_blank"
               rel="noopener noreferrer"
             >
